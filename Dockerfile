@@ -1,4 +1,4 @@
-FROM quay.io/devurandom/c-dev:debian9-1
+FROM quay.io/devurandom/c-dev:debian9-2
 
 ENV RUST_VERSIONS="1.15.0 1.16.0 1.17.0"
 

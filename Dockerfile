@@ -17,3 +17,6 @@ RUN for v in ${RUST_VERSIONS} ; do \
 		echo "Installing Rust ${v} ..." ; \
 		rustup toolchain install "${v}" || exit ; \
 	done
+
+RUN echo "Installing binaries with Cargo ..." ; \
+	rustup run "${v}" cargo install cargo-test-junit --vers=0.6.1 || exit

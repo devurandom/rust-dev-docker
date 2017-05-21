@@ -1,4 +1,4 @@
-FROM docker.io/library/debian:9
+FROM quay.io/devurandom/c-dev:debian9-1
 
 ENV RUST_VERSIONS="1.15.0 1.16.0 1.17.0"
 
@@ -8,12 +8,8 @@ ENV CARGO_HOME=/opt/cargo \
 
 RUN apt-get -y update \
 	&& apt-get -y install \
-		build-essential \
 		clang \
 		curl \
-		gcovr \
-		git \
-		valgrind \
 	&& apt-get -y clean all \
 	&& curl https://sh.rustup.rs -sSf | sh -s -- -y
 

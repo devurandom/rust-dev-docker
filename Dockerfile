@@ -6,12 +6,14 @@ ENV CARGO_HOME=/opt/cargo \
 	RUSTUP_HOME=/opt/rust \
 	PATH=/opt/cargo/bin:$PATH
 
-RUN apt-get -y update \
+RUN /bin/bash -c \
+	"apt-get -y update \
 	&& apt-get -y install \
 		clang \
 		curl \
 	&& apt-get -y clean all \
-	&& curl https://sh.rustup.rs -sSf | sh -s -- -y
+	&& set -o pipefail \
+	&& curl --fail --silent --show-error https://sh.rustup.rs | sh -s -- -y"
 
 RUN for v in ${RUST_VERSIONS} ; do \
 		echo "Installing Rust ${v} ..." ; \

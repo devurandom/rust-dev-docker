@@ -1,6 +1,6 @@
 FROM quay.io/devurandom/c-dev:debian9-2
 
-ENV RUST_VERSIONS="1.15.0 1.16.0 1.17.0"
+ENV RUST_VERSIONS="1.15.0 1.16.0 1.17.0 1.18.0 1.19.0"
 
 ENV CARGO_HOME=/opt/cargo \
 	RUSTUP_HOME=/opt/rust \
